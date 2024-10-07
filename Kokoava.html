@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kokoava tehtävä</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #9f9f9f;
+  }
+  </style>
+
+  <div class="p-5 text-white text-center bg-success-subtle p-3">
+    <h1>Veeran</h1>
+    <p>PORTFOLIO</p> 
+  </div>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-sm">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active text-white" href="#About me">Etusivu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled text-white" href="#Myworks">My works (disabled)</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#Contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-4" id="About me">
+      <h2>About Me</h2>
+      <div class="fakeimg">Fake Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <h3 class="mt-4">Some Links</h3>
+      <p>Lorem ipsum dolor sit ame.</p>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#Myworks">My works (disabled)</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Contact">Contact</a>
+        </li>
+      </ul>
+      <hr class="d-sm-none">
+    </div>
+
+    <div class="col-sm-8">
+        <div class="nav-item">
+          <a class="nav-link active disabled" href="#Myworks"><h2>My Works (disabled)</h2></a>
+        </div>
+      <div class="fakeimg">Fake Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor 	incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
+    </div>
+ 
+      <h4>OpenStreetMap JSON-haku</h4>
+      <div id="result"></div>
+  
+      <script>
+        // Haetaan sijaintitiedot Nominatim-palvelusta
+        fetch('https://nominatim.openstreetmap.org/search?q=Helsinki&format=json')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); // Voi katsoa JSON-datan rakenteen konsolista
+
+            // Käsitellään JSON-data
+            let result = "<h2>Sijaintitiedot Helsingistä:</h2>";
+            data.forEach(location => {
+                result += `
+                    <p>
+                        Osoite: ${location.display_name} <br>
+                        Leveysaste: ${location.lat} <br>
+                        Pituusaste: ${location.lon}
+                    </p>
+                `;
+            });
+
+            // Näytetään tiedot sivulla
+            document.getElementById("result").innerHTML = result;
+        })
+        .catch(error => {
+            console.error('Virhe haussa:', error);
+            document.getElementById("result").innerHTML = "<p>Virhe tietojen haussa.</p>";
+        });
+    </script>
+
+
+
+</body>
+<footer>
+  <div class="mt-5 p-4 bg-dark text-white text-center justify-content-center">
+    <div class="col-sm-8">
+      <div class="nav-item" id="Contact" padding-top:50px>
+    <h2 class="text-white" text-align="center">Contact info</h2>
+    <h5>Veera Lehto</h5>
+    <h5>0401234567</h5>
+    <h5>Veera 2024</h5>
+  </div>
+</footer>
+</html>

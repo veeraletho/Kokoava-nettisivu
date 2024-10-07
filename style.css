@@ -1,0 +1,107 @@
+/* Yleiset asetukset */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #bcedc0; 
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, p {
+  color: #053b35;
+  font-family: 'Segoe UI';
+}
+
+h2, h3, h4, h6 {
+  color: #333;
+}
+
+h5 {
+  color: rgb(212, 255, 250);
+  font-family: 'Segoe UI';
+}
+
+.bg-primary h1, .bg-primary p {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Navigaatio */
+.navbar {
+  padding: 15px;
+  background-color: #4a8364;
+  overflow: visible;
+  white-space: normal;
+  padding-bottom: 20px;
+  font-style: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  background-color: #548999; /* Beige aktiivinen linkki */
+  border-radius: 5px;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+#About\ me h2, #Myworks h2, #Contact h2 {
+  margin-bottom: 20px;
+}
+
+.fakeimg p {
+  margin: 0;
+}
+
+/* Sijaintitiedot */
+#result {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Painikkeet ja linkit */
+.nav-pills .nav-link.active {
+  background-color: #d2b48c; /* Beige aktiivinen painike */
+}
+
+.nav-pills .nav-link {
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  background-color: #c9a06c; /* Tummempi beige hover-tilassa */
+  color: white;
+}
+
+/* Yhteystiedot */
+#Contact {
+  margin-top: 50px;
+}
+
+/* Footer */
+.bg-dark {
+  text-align: center;
+  padding-left: 20px;
+  background-color: #343a40 !important;
+}
+
+.bg-dark p {
+  margin: 0;
+  padding: 20px 0;
+}
+
+/* Mobiilinäkymä */
+@media (max-width: 768px) {
+  .col-sm-4, .col-sm-8 {
+    margin-bottom: 20px;
+  }
+}
